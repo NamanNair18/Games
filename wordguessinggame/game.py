@@ -2,6 +2,9 @@ import random
 
 word_bank = ['rizz', 'ohio', 'sigma', 'tiktok', 'skibidi', 'happy', 'Rihno', 'Crate', 'Coding']
 
+print("Welcome to the Word Guessing Game!")
+print("You have 10 attempts to guess the word. Guess one letter at a time. Good luck!")
+
 word = random.choice(word_bank) #used to select a random word from the world_bank
 
 guessedword = ['_'] * len(word)
