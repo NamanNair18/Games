@@ -34,13 +34,23 @@ def play_game():
         if len(guess) != 1 or not guess.isalpha():
             print("Please enter a single letter.")
             continue
-        
-    else: # If the guessed letter is not in the word
-        attempts -= 1
-        print('Wrong guess! Attempts Left: ' + str(attempts))
 
-    if '_' not in guessedword: # Check if there are no underscores left, meaning the word is fully guessed
-        print('\n Congratulations !! You guessed the Word: ' + word)
-    break
-else:
-    print('\nYou\'ve run out of attempts! The word was: ' + word)
+  # Check for repeated guesses
+        if guess in guessed_letters:
+            print("You already guessed that letter.")
+            continue
+        guessed_letters.add(guess)
+
+        # Check the guess against the word
+        match_found = False
+        for i in range(len(secret_word)):
+            if secret_word[i].lower() == guess:
+                display_word[i] = secret_word[i]
+                match_found = True
+
+        if match_found:
+            print("Great Guess!!")
+        else:
+            attempts -= 1
+            print(f"Wrong guess! Attempts left: {attempts}")
+
