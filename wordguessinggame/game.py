@@ -54,3 +54,12 @@ def play_game():
             attempts -= 1
             print(f"Wrong guess! Attempts left: {attempts}")
 
+# Check if the word is fully guessed
+        if is_word_guessed(display_word):
+            print(f"\nCongratulations!! You guessed the word: {secret_word}")
+            break
+    else:
+        print(f"\nYou've run out of attempts! The word was: {secret_word}")
+
+# Start the game
+play_game()
