@@ -23,12 +23,18 @@ def play_game():
     display_word = initialize_guessed_word(secret_word)
     attempts = 10
     guessed_letters = set()
-    
-    if guess in word: # Check if the guessed letter is present in the chosen word
-        for i in range (len(word)):
-            if word[i] == guess:
-                guessedword[i] = guess
-                print('Great Guess!!')
+
+    # Main game loop
+    while attempts > 0:
+        print("\nCurrent Word:", " ".join(display_word))
+        print("Already guessed letters:", ", ".join(guessed_letters))
+        guess = input("Guess a letter: ").lower()
+
+# Validate input
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter a single letter.")
+            continue
+        
     else: # If the guessed letter is not in the word
         attempts -= 1
         print('Wrong guess! Attempts Left: ' + str(attempts))
