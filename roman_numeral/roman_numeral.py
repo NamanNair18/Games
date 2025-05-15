@@ -14,3 +14,13 @@ def roman_to_int(numeral):
     for char in numeral:
         if char not in roman_values:
             raise ValueError(f"Invalid Roman numeral character: {char}")
+        total = 0
+    # Iterate through the string up to the second-to-last character
+    for i in range(len(numeral) - 1):
+        current = roman_values[numeral[i]]
+        next_val = roman_values[numeral[i + 1]]
+        # If current value is less than the next, subtract it (subtractive notation)
+        if current < next_val:
+            total -= current
+        else:
+            total += current
