@@ -24,3 +24,15 @@ def roman_to_int(numeral):
             total -= current
         else:
             total += current
+         # Add the value of the last character
+    total += roman_values[numeral[-1]]
+    
+    return total
+
+# Get input, process it, and display the result
+try:
+    numeral_input = input("Enter the roman numerals you want to convert: ")
+    result = roman_to_int(numeral_input)
+    print(f"The roman numerals you entered translate to: {result}!")
+except ValueError as e:
+    print(f"Error: {e}")
