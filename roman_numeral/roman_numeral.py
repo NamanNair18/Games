@@ -6,4 +6,11 @@ def roman_to_int(numeral):
     
     # Convert input to uppercase to handle lowercase numerals
     numeral = numeral.upper()
+     # Handle empty string
+    if not numeral:
+        return 0
     
+    # Check for invalid characters
+    for char in numeral:
+        if char not in roman_values:
+            raise ValueError(f"Invalid Roman numeral character: {char}")
