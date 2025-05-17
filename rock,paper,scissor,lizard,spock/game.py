@@ -24,7 +24,7 @@ while True:
             raise ValueError
         break
     except ValueError:
-        print('Enter number only')
+        print('Enter number (0 - 4) ')
 
 human_choice = choices[user_input]
 
