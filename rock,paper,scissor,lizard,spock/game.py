@@ -1,3 +1,5 @@
+import random
+
 win_lose_pairs = [('Scissors','Paper'),
                   ('Paper'   ,'Rock'),
                   ('Rock'    ,'Lizard'),
@@ -7,3 +9,7 @@ win_lose_pairs = [('Scissors','Paper'),
                   ('Lizard'  ,'Paper'),
                   ('Spock'   ,'Rock'),
                   ('Rock'    ,'Scissors'),]
+
+choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+
+computer_choice = random.choice(choices)
