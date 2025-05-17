@@ -16,3 +16,16 @@ computer_choice = random.choice(choices)
 
 print(' Please choose one of the option below: ')
 print(' -> 0 for Rock\n -> 1 for Paper\n -> 2 for Scissors\n -> 3 for Lizard -> 4 for Spock')
+
+user_input = int(input(' Your choice (0 - 4):  '))
+
+human_choice = choices[user_input]
+
+if computer_choice == human_choice:
+    result = 'Draw!'
+
+elif (human_choice, computer_choice) in win_lose_pairs:
+    result = 'You won!'
+
+else:
+    result = 'You Lost!'
