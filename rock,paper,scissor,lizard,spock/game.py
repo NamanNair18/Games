@@ -16,7 +16,7 @@ while True:
     computer_choice = random.choice(choices)
 
     print(' Please choose one of the option below: ')
-    print(' -> 0 for Rock\n -> 1 for Paper\n -> 2 for Scissors\n -> 3 for Lizard -> 4 for Spock')
+    print(' -> 0 for Rock\n -> 1 for Paper\n -> 2 for Scissors\n -> 3 for Lizard\n -> 4 for Spock')
 
     while True:
         try:
