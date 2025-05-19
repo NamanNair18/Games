@@ -75,4 +75,21 @@ while True:
             print("You pick up the rusty key.")
         else:
             print("There's no such item here.")
+    elif action == 'use' and len(command) > 1:
+        item = command[1]
+        if current_room == 'living_room' and item == 'key' and 'key' in inventory:
+            door_unlocked = True
+            inventory.remove('key')
+            print("You unlock the door with the key.")
+        else:
+            print("You can't use that here.")
+    elif action == 'read' and current_room == 'library':
+        print("You open the tome. It reads: 'The key lies beneath the mat.'")
+
+    elif action == 'look' and current_room == 'kitchen' and 'under' in command and 'mat' in command:
+        if not key_revealed:
+            key_revealed = True
+            print("You lift the mat and find a rusty key underneath.")
+        else:
+            print("There's nothing else under the mat.")
 
