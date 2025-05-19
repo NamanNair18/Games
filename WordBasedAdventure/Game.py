@@ -64,4 +64,15 @@ while True:
                 print("You move to the", current_room + ".")
         else:
             print("You can't go that way!")
+    elif action == 'look':
+        print(rooms[current_room]['description'])
+
+    elif action == 'take' and len(command) > 1:
+        item = command[1]
+        if current_room == 'kitchen' and item == 'key' and key_revealed:
+            inventory.append('key')
+            key_revealed = False
+            print("You pick up the rusty key.")
+        else:
+            print("There's no such item here.")
 
