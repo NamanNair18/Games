@@ -92,4 +92,9 @@ while True:
             print("You lift the mat and find a rusty key underneath.")
         else:
             print("There's nothing else under the mat.")
+    elif action == 'escape' and current_room == 'bedroom':
+        print("You climb through the window and breathe fresh air. You escaped the haunted house! You win!")
+        break
 
+    else:
+        print("I don't understand that. Try 'go <direction>', 'look', 'take <item>', 'use <item>', 'read', or 'look under mat'.")
