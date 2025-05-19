@@ -49,3 +49,19 @@ while True:
         continue
 
     action = command[0]
+
+        # Handle commands
+    if action == 'quit':
+        print("Thanks for playing!")
+        break
+    elif action == 'go' and len(command) > 1:
+        direction = command[1]
+        if direction in rooms[current_room]:
+            if current_room == 'living_room' and direction == 'south' and not door_unlocked:
+                print("The door is locked. You need a key.")
+            else:
+                current_room = rooms[current_room][direction]
+                print("You move to the", current_room + ".")
+        else:
+            print("You can't go that way!")
+
